@@ -31,13 +31,16 @@
 
 html, body {
   height: 100%;
+  height: -webkit-fill-available;
   margin: 0;
+  padding: 0;
   background: var(--bg-gradient);
   background-attachment: fixed;
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  touch-action: manipulation;
 }
 
 .page {
@@ -48,6 +51,7 @@ html, body {
   padding: 20px;
   position: relative;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .hearts-background {
@@ -374,12 +378,14 @@ html, body {
   padding: 14px 16px;
   border: 2px solid var(--border-color);
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 16px;
   font-family: inherit;
   color: var(--text-primary);
   background: rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   outline: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-group input::placeholder {
@@ -886,27 +892,195 @@ html, body {
 }
 
 @media (max-width: 560px) {
+  .page {
+    padding: 10px;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  .login-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  
   .login-card {
-    padding: 36px 28px;
+    padding: 32px 20px;
+    border-radius: 16px;
   }
   
   .login-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+  
+  .login-subtitle {
+    font-size: 0.875rem;
+  }
+  
+  .form-group input {
+    padding: 16px;
+    font-size: 16px;
+  }
+  
+  .submit-btn {
+    padding: 18px;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+  
+  .success-container {
+    max-width: 100%;
+    width: 100%;
   }
   
   .success-card {
-    padding: 48px 32px;
+    padding: 40px 24px;
+    border-radius: 16px;
   }
   
   .success-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  .success-message {
+    font-size: 1.1rem;
+    line-height: 1.4;
   }
   
   .success-icon {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .wish-container {
+    margin-top: 24px;
+  }
+  
+  .wish-btn {
+    padding: 18px;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+  
+  .wish-display {
+    padding: 16px;
+    font-size: 1rem;
+    min-height: 60px;
+  }
+  
+  .wheel-container {
+    margin-top: 32px;
+  }
+  
+  .wheel-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  
+  .wheel-wrapper {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 20px;
+  }
+  
+  .wheel-section span {
+    font-size: 0.95rem;
+  }
+  
+  .wheel-section:nth-child(5) span {
+    font-size: 1.1rem;
+  }
+  
+  .wheel-section:nth-child(1) span {
+    transform: translate(-50%, -50%) rotate(36deg) translateY(-70px) rotate(-36deg);
+  }
+  
+  .wheel-section:nth-child(2) span {
+    transform: translate(-50%, -50%) rotate(108deg) translateY(-70px) rotate(-108deg);
+  }
+  
+  .wheel-section:nth-child(3) span {
+    transform: translate(-50%, -50%) rotate(180deg) translateY(-70px) rotate(-180deg);
+  }
+  
+  .wheel-section:nth-child(4) span {
+    transform: translate(-50%, -50%) rotate(252deg) translateY(-70px) rotate(-252deg);
+  }
+  
+  .wheel-section:nth-child(5) span {
+    transform: translate(-50%, -50%) rotate(324deg) translateY(-70px) rotate(-324deg);
+  }
+  
+  .spin-btn {
+    padding: 18px;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+  
+  .wheel-result {
+    font-size: 1.1rem;
   }
   
   .heart {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .page {
+    padding: 8px;
+  }
+  
+  .login-card {
+    padding: 28px 16px;
+  }
+  
+  .login-title {
+    font-size: 1.35rem;
+  }
+  
+  .success-card {
+    padding: 32px 20px;
+  }
+  
+  .success-title {
     font-size: 1.5rem;
+  }
+  
+  .success-icon {
+    font-size: 3rem;
+  }
+  
+  .wheel-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .wheel-section span {
+    font-size: 0.85rem;
+  }
+  
+  .wheel-section:nth-child(5) span {
+    font-size: 1rem;
+  }
+  
+  .wheel-section:nth-child(1) span {
+    transform: translate(-50%, -50%) rotate(36deg) translateY(-65px) rotate(-36deg);
+  }
+  
+  .wheel-section:nth-child(2) span {
+    transform: translate(-50%, -50%) rotate(108deg) translateY(-65px) rotate(-108deg);
+  }
+  
+  .wheel-section:nth-child(3) span {
+    transform: translate(-50%, -50%) rotate(180deg) translateY(-65px) rotate(-180deg);
+  }
+  
+  .wheel-section:nth-child(4) span {
+    transform: translate(-50%, -50%) rotate(252deg) translateY(-65px) rotate(-252deg);
+  }
+  
+  .wheel-section:nth-child(5) span {
+    transform: translate(-50%, -50%) rotate(324deg) translateY(-65px) rotate(-324deg);
   }
 }
